@@ -1,18 +1,23 @@
 const screen = {
     userProfile: document.querySelector('.profile-data'),
     renderUser(user){
-        this.userProfile.innerHTML = `<div class="info">
-        <img src="${user.avatarUrl}" alt="foto do perfil do usuario" />
-        <div class="data">
-             <h1>${user.name ?? 'Nao possui nome cadastrado 😢'}</h1>
-             <p>${user.bio ?? 'Nao possui bio cadastrada 😢'}</p>
-             <br>
-             <p>👥 Seguidores: ${user.followers}</p>
-             <p>👥 Seguindo: ${user.following}</p>
-         </div>
-         </div>`
-
-        
+        this.userProfile.innerHTML = `<div class="info section">
+                                        <img src="${user.avatarUrl}" alt="Foto do perfil do usuário" />
+                                            <div class="data">
+                                                <h1>${user.name ?? 'Não possui nome cadastrado 😥'}</h1>
+                                                <p>${user.bio ?? 'Não possui bio    cadastrada 😥'}</p>
+                                            </div>
+                                            <div class="counters">
+                                                <div class="followers">
+                                                    <h4>👥 Seguidores</h4>
+                                                    <span>${user.followers}</span>
+                                                </div>
+                                                <div class="following">
+                                                    <h4>👥 Seguindo</h4>
+                                                    <span>${user.following}</span>
+                                                </div>
+                                            </div>
+                                      </div>` 
 
          if(user.repositories.length > 0){
             let repositoriesItens = ''
